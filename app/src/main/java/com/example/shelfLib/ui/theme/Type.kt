@@ -1,17 +1,29 @@
 package com.example.shelfLib.ui.theme
 
+
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.shelfwise.R
+
+val robotoFontFamily = FontFamily(
+    Font(R.font.robotomedium),
+    Font(R.font.robotoregular)
+)
 
 // Set of Material typography styles to start with
 val Typography = Typography(
-    bodyLarge = TextStyle(
-        fontFamily = FontFamily.Default,
+    bodySmall = TextStyle(
+        fontFamily = robotoFontFamily,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp,
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = robotoFontFamily,
+        fontWeight = FontWeight.Medium,
+        fontSize = 24.sp,
         lineHeight = 24.sp,
         letterSpacing = 0.5.sp
     )
