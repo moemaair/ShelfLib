@@ -2,6 +2,7 @@ package com.example.shelfLib.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -23,28 +24,40 @@ import com.example.shelfLib.ui.theme.robotoFontFamily
 
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
-    Box(modifier = Modifier
-        .fillMaxWidth()
-        .height(217.dp)
-        .background(Color(0XFF263585)),
-        contentAlignment = androidx.compose.ui.Alignment.Center)
-    {
+    Column {
+        Box(modifier = Modifier
+            .fillMaxWidth()
+            .height(217.dp)
+            .background(Color(0XFF263585)),
+            contentAlignment = androidx.compose.ui.Alignment.Center)
+        {
 
-        Text(text = "ShelfLib",
+            Text(text = "ShelfLib",
 
-            style = TextStyle(
-            fontFamily = robotoFontFamily,
-            fontWeight = FontWeight.Bold,
-            fontSize = 24.sp,
-            textAlign = TextAlign.Center,
-            color = Color.White
+                style = TextStyle(
+                    fontFamily = robotoFontFamily,
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 24.sp,
+                    textAlign = TextAlign.Center,
+                    color = Color.White
+                )
             )
-        )
 
+        }
+
+        Spacer(modifier = Modifier.height(100.dp)) // Adding vertical space
+        // search textfield
+
+        SearchTextField()
+
+        Spacer(modifier = Modifier.height(30.dp)) // Adding vertical space
+
+        Column {
+            Text(text = "Check if Book is in Library")
+            Text(text = "Add Book to Library" )
+            Text(text = "View Library" )
+        }
     }
-
-    Spacer(modifier = Modifier.height(100.dp)) // Adding vertical space
-
 
 
 }
